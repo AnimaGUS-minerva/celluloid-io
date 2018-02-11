@@ -17,7 +17,7 @@ module Celluloid
           # socket
           socket = args.first
           fail ArgumentError, "wrong number of arguments (#{args.size} for 1)" if args.size != 1
-          fail ArgumentError, "wrong kind of socket (#{socket.class} for UDPSocket)" unless socket.kind_of? ::UDPSocket
+          #fail ArgumentError, "wrong kind of socket (#{socket.class} for UDPSocket)" unless socket.kind_of? ::UDPSocket
           super(socket)
         else
           super(::UDPSocket.new(*args))
