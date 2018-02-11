@@ -12,7 +12,7 @@ module Celluloid
       # @param socket [BasicSocket, OpenSSL::SSL::SSLSocket]
       def initialize(socket)
         case socket
-        when ::BasicSocket, OpenSSL::SSL::SSLSocket
+        when ::BasicSocket, OpenSSL::SSL::SSLSocket, OpenSSL::SSL::DTLSSocket
           @socket = socket
         else
           raise ArgumentError, "expected a socket, got #{socket.inspect}"
