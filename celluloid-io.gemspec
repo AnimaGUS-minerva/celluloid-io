@@ -15,9 +15,9 @@ Gem::Specification.new do |gem|
   gem.summary       = "Celluloid::IO allows you to monitor multiple IO objects within a Celluloid actor"
   gem.homepage      = "http://github.com/celluloid/celluloid-io"
 
-  gem.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
-  gem.files         = `git ls-files`.split("\n")
-  gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  gem.executables   = IO::read("bin-files.txt").split("\n").map { |f| File.basename(f) }
+  gem.files         = IO::read("all-files.txt").split("\n")
+  gem.test_files    = IO::read("test-files.txt").split("\n")
   gem.require_paths = ["lib"]
 
   gem.add_dependency "nio4r", ">= 1.1"
